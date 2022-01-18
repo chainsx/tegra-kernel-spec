@@ -12,8 +12,8 @@ Release: %{hulkrelease}.1.tegra
 Summary: Linux Kernel
 License: GPLv2 and Apache-2.0 and MIT
 URL:	 http://www.kernel.org/
-Source0: kernel_src.tbz2
-Source1: %{cross_compile}.tar.xz
+Source0: https://github.com/chainsx/t210-kernel/archive/refs/tags/32.6.1.tar.gz
+Source1: http://releases.linaro.org/components/toolchain/binaries/latest-5/aarch64-linux-gnu/%{cross_compile}.tar.xz
 
 BuildRequires: module-init-tools, patch >= 2.5.4, bash >= 2.03, tar
 BuildRequires: bzip2, xz, findutils, gzip, m4, make >= 3.78, diffutils, gawk
