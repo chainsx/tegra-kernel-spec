@@ -65,14 +65,14 @@ kernel modules files of the Linux kernel.
 %build
 tar -xf %{_sourcedir}/%{cross_compile}.tar.xz -C .
 export PATH=$PATH:%{_builddir}/kernel-%{version}/%{cross_compile}/bin
-cd %{_builddir}/kernel-%{version}/kernel/kernel-%{version}
+cd %{_builddir}/kernel-%{version}/t210-kernel-32.6.1/kernel/kernel-%{version}
 
 make ARCH=arm64 tegra_defconfig CROSS_COMPILE=aarch64-linux-gnu-
 
 make ARCH=arm64 KERNELRELEASE=%{version} CROSS_COMPILE=aarch64-linux-gnu-
 
 %install
-cd %{_builddir}/kernel-%{version}/kernel/kernel-%{version}
+cd %{_builddir}/kernel-%{version}/t210-kernel-32.6.1/kernel/kernel-%{version}
 export PATH=$PATH:%{_builddir}/kernel-%{version}/%{cross_compile}/bin
 make ARCH=arm64 INSTALL_MOD_PATH=$RPM_BUILD_ROOT modules_install KERNELRELEASE=%{version} CROSS_COMPILE=aarch64-linux-gnu-
 rm -rf $RPM_BUILD_ROOT/lib/modules/%{version}/source $RPM_BUILD_ROOT/lib/modules/%{version}/build
