@@ -6,4 +6,4 @@ Jetson Nano, Nano 2GB and TX1
 
 kernel package spec file for Enterprise Linux.
 
-`rpmbuild -ba trgra-kernel.spec`
+`rpmbuild -ba --target=aarch64 trgra-kernel.spec`
